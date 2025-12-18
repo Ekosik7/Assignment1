@@ -12,17 +12,12 @@ import (
 func main() {
 	lib := Library.NewLibrary()
 
-	lib.AddBook(Library.Book{
-		ID:     "1",
-		Title:  "Go Basics",
-		Author: "Alan Donovan",
-	})
-	lib.AddBook(Library.Book{
-		ID:     "2",
-		Title:  "Clean Code",
-		Author: "Robert Martin",
-	})
+	lib.AddBook(Library.Book{ID: "1", Title: "Harry Potter and the Philosopher's Stone", Author: "J.K. Rowling"})
+	lib.AddBook(Library.Book{ID: "2", Title: "The Hobbit", Author: "J.R.R. Tolkien"})
+	lib.AddBook(Library.Book{ID: "3", Title: "War and Peace", Author: "Leo Tolstoy"})
+	lib.AddBook(Library.Book{ID: "4", Title: "Pride and Prejudice", Author: "Jane Austen"})
 
+	// Borrow one example book
 	lib.BorrowBook("1")
 
 	for _, b := range lib.ListAvailableBooks() {
@@ -40,8 +35,10 @@ func main() {
 	}
 
 	company := Company.NewCompany()
-	company.AddEmployee(1, Company.FullTimeEmployee{Name: "Alice", Salary: 3000})
-	company.AddEmployee(2, Company.PartTimeEmployee{Name: "Bob", HourlyPay: 10, Hours: 80})
+	company.AddEmployee(1, Company.FullTimeEmployee{Name: "Nursultan", Salary: 3200})
+	company.AddEmployee(2, Company.FullTimeEmployee{Name: "Aigerim", Salary: 2800})
+	company.AddEmployee(3, Company.PartTimeEmployee{Name: "Almas", HourlyPay: 12, Hours: 40})
+	company.AddEmployee(4, Company.PartTimeEmployee{Name: "Zhansaya", HourlyPay: 9, Hours: 60})
 
 	for _, info := range company.ListEmployees() {
 		fmt.Println(info)
