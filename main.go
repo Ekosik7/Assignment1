@@ -17,7 +17,6 @@ func main() {
 	lib.AddBook(Library.Book{ID: "3", Title: "War and Peace", Author: "Leo Tolstoy"})
 	lib.AddBook(Library.Book{ID: "4", Title: "Pride and Prejudice", Author: "Jane Austen"})
 
-	// Borrow one example book
 	lib.BorrowBook("1")
 
 	for _, b := range lib.ListAvailableBooks() {
